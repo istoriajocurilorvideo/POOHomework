@@ -1,0 +1,202 @@
+# depslib dependency file v1.0
+1574691674 source:g:\tutu\homeworkoop_nr2_12\tema12\main.cpp
+	"Matrice.h"
+
+1574691698 g:\tutu\homeworkoop_nr2_12\tema12\include\matrice.h
+	"Universal.h"
+
+1574691013 source:g:\tutu\homeworkoop_nr2_12\tema12\src\matrice.cpp
+	"Matrice.h"
+
+1574691166 source:g:\tutu\homeworkoop_nr2_12\tema12\src\graf.cpp
+	"Graf.h"
+
+1574691674 g:\tutu\homeworkoop_nr2_12\tema12\include\graf.h
+	"Universal.h"
+
+1574691609 g:\tutu\homeworkoop_nr2_12\tema12\include\universal.h
+	<iostream>
+	<bits/stdc++.h>
+
+1574691112 source:g:\tutu\homeworkoop_nr2_12\tema12\src\vector.cpp
+	"Vector.h"
+
+1574691674 g:\tutu\homeworkoop_nr2_12\tema12\include\vector.h
+	"Universal.h"
+
+1574691412 source:g:\tutu\homeworkoop_nr2_12\tema12\src\graf_neorientat.cpp
+	"Graf_Neorientat.h"
+
+1574691722 g:\tutu\homeworkoop_nr2_12\tema12\include\graf_neorientat.h
+	"Graf.h"
+	"Lista.h"
+
+1574691748 g:\tutu\homeworkoop_nr2_12\tema12\include\lista.h
+	"Universal.h"
+	"Vector.h"
+
+1574867521 source:g:\tutu\homeworkoop_nr2_12-master\tema12\main.cpp
+	"Matrice.h"
+	"Vector.h"
+	"Graf.h"
+	"Graf_Neorientat.h"
+	"Graf_Orientat.h"
+
+1574875727 g:\tutu\homeworkoop_nr2_12-master\tema12\include\matrice.h
+	"Universal.h"
+
+1574872806 g:\tutu\homeworkoop_nr2_12-master\tema12\include\universal.h
+	<iostream>
+	<bits/stdc++.h>
+	<cstring>
+	<utility>
+
+1574867654 g:\tutu\homeworkoop_nr2_12-master\tema12\include\vector.h
+	"Universal.h"
+
+1574875277 g:\tutu\homeworkoop_nr2_12-master\tema12\include\graf.h
+	"Universal.h"
+
+1574875523 g:\tutu\homeworkoop_nr2_12-master\tema12\include\graf_neorientat.h
+	"Graf.h"
+	"Lista.h"
+
+1574876129 g:\tutu\homeworkoop_nr2_12-master\tema12\include\lista.h
+	"Universal.h"
+	"Vector.h"
+
+1574875523 g:\tutu\homeworkoop_nr2_12-master\tema12\include\graf_orientat.h
+	"Graf.h"
+	"Matrice.h"
+
+1574868690 source:g:\tutu\homeworkoop_nr2_12-master\tema12\src\graf.cpp
+	"Graf.h"
+
+1574875840 source:g:\tutu\homeworkoop_nr2_12-master\tema12\src\graf_neorientat.cpp
+	"Graf_Neorientat.h"
+
+1574875920 source:g:\tutu\homeworkoop_nr2_12-master\tema12\src\graf_orientat.cpp
+	"Graf_Orientat.h"
+
+1574868185 source:g:\tutu\homeworkoop_nr2_12-master\tema12\src\lista.cpp
+	"Lista.h"
+
+1574868083 source:g:\tutu\homeworkoop_nr2_12-master\tema12\src\vector.cpp
+	"Vector.h"
+
+1574875725 source:g:\tutu\homeworkoop_nr2_12-master\tema12\src\matrice.cpp
+	"Matrice.h"
+
+1574864056 source:g:\tutu\homeworkoop_nr2_12-master\tema12\src\universal.cpp
+	"Universal.h"
+
+1574903544 source:c:\users\robofun.000\desktop\homeworkoop_nr2_12-master (1)\homeworkoop_nr2_12-master\tema12\main.cpp
+	"Matrice.h"
+	"Vector.h"
+	"Graf.h"
+	"Graf_Neorientat.h"
+	"Graf_Orientat.h"
+
+1574887373 c:\users\robofun.000\desktop\homeworkoop_nr2_12-master (1)\homeworkoop_nr2_12-master\tema12\include\matrice.h
+	"Universal.h"
+
+1574886890 c:\users\robofun.000\desktop\homeworkoop_nr2_12-master (1)\homeworkoop_nr2_12-master\tema12\include\universal.h
+	<iostream>
+	<bits/stdc++.h>
+	<cstring>
+	<utility>
+
+1574903496 c:\users\robofun.000\desktop\homeworkoop_nr2_12-master (1)\homeworkoop_nr2_12-master\tema12\include\vector.h
+	"Universal.h"
+
+1574893561 c:\users\robofun.000\desktop\homeworkoop_nr2_12-master (1)\homeworkoop_nr2_12-master\tema12\include\graf.h
+	"Universal.h"
+
+1574896724 c:\users\robofun.000\desktop\homeworkoop_nr2_12-master (1)\homeworkoop_nr2_12-master\tema12\include\graf_neorientat.h
+	"Graf.h"
+	"Lista.h"
+
+1574898971 c:\users\robofun.000\desktop\homeworkoop_nr2_12-master (1)\homeworkoop_nr2_12-master\tema12\include\lista.h
+	"Universal.h"
+	"Vector.h"
+
+1574892485 c:\users\robofun.000\desktop\homeworkoop_nr2_12-master (1)\homeworkoop_nr2_12-master\tema12\include\graf_orientat.h
+	"Matrice.h"
+
+1574886890 source:c:\users\robofun.000\desktop\homeworkoop_nr2_12-master (1)\homeworkoop_nr2_12-master\tema12\src\graf.cpp
+	"Graf.h"
+
+1574903646 source:c:\users\robofun.000\desktop\homeworkoop_nr2_12-master (1)\homeworkoop_nr2_12-master\tema12\src\graf_neorientat.cpp
+	"Graf_Neorientat.h"
+
+1574892500 source:c:\users\robofun.000\desktop\homeworkoop_nr2_12-master (1)\homeworkoop_nr2_12-master\tema12\src\graf_orientat.cpp
+	"Graf_Orientat.h"
+
+1574898970 source:c:\users\robofun.000\desktop\homeworkoop_nr2_12-master (1)\homeworkoop_nr2_12-master\tema12\src\lista.cpp
+	"Lista.h"
+
+1574886890 source:c:\users\robofun.000\desktop\homeworkoop_nr2_12-master (1)\homeworkoop_nr2_12-master\tema12\src\universal.cpp
+	"Universal.h"
+
+1574903584 source:c:\users\robofun.000\desktop\homeworkoop_nr2_12-master (1)\homeworkoop_nr2_12-master\tema12\src\vector.cpp
+	"Vector.h"
+
+1574887494 source:c:\users\robofun.000\desktop\homeworkoop_nr2_12-master (1)\homeworkoop_nr2_12-master\tema12\src\matrice.cpp
+	"Matrice.h"
+
+1574948448 source:c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\main.cpp
+	"Matrice.h"
+	"Vector.h"
+	"Graf.h"
+	"Graf_Neorientat.h"
+	"Graf_Orientat.h"
+
+1574948384 c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\include\matrice.h
+	"Universal.h"
+
+1574948203 c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\include\universal.h
+	<iostream>
+	<bits/stdc++.h>
+	<cstring>
+	<utility>
+	<exception>
+
+1574949409 c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\include\vector.h
+	"Universal.h"
+
+1574940028 c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\include\graf.h
+	"Universal.h"
+
+1574939971 c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\include\graf_neorientat.h
+	"Graf.h"
+	"Lista.h"
+
+1574927740 c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\include\lista.h
+	"Universal.h"
+	"Vector.h"
+
+1574944777 c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\include\graf_orientat.h
+	"Graf.h"
+	"Matrice.h"
+
+1574879466 source:c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\src\graf.cpp
+	"Graf.h"
+
+1574945366 source:c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\src\graf_orientat.cpp
+	"Graf_Orientat.h"
+
+1574927885 source:c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\src\lista.cpp
+	"Lista.h"
+
+1574948339 source:c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\src\matrice.cpp
+	"Matrice.h"
+
+1574879466 source:c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\src\universal.cpp
+	"Universal.h"
+
+1574949407 source:c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\src\vector.cpp
+	"Vector.h"
+
+1574943398 source:c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\src\graf_neorientat.cpp
+	"Graf_Neorientat.h"
+
