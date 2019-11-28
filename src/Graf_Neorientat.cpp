@@ -3,11 +3,11 @@
 Graf_Neorientat::Graf_Neorientat(int noduriGN) : Graf(noduriGN)
 {
     for(int index = 0; index < nrNodes; index ++)
-        gnl.addNode(Vector());
+        gnl.addNode(Vector<int>());
 }
 
 //stil working on it
-Graf_Neorientat::Graf_Neorientat(Lista l) : Graf(l.getSize())
+Graf_Neorientat::Graf_Neorientat(Lista<int> l) : Graf(l.getSize())
 {
     gnl.emptyList();
     gnl = l;
@@ -50,7 +50,7 @@ void Graf_Neorientat::deleteEdge(int nd1, int nd2)
 
 void Graf_Neorientat::addNode()
 {
-    gnl.addNode(Vector());
+    gnl.addNode(Vector<int>());
     nrNodes++;
 }
 
@@ -115,6 +115,13 @@ void Graf_Neorientat::print(ostream& out) const
     }
 }
 void Graf_Neorientat::read(istream& in) {
+    if(!gnl.isListEmpty()) {
+        unsigned int nd1, nd2;
+        in>>nd1>>nd2;
+        if((nd1 < 0 || nd1 > nrNodes) || (nd2 < 0 || nd2 > nrNodes))
+            throw out_of_range("Index out of range");
+        addEdge(nd1, nd2);
+    }else throw zero_length_error("Oriented Graph empty");
 }
 
 void Graf_Neorientat::tree_dfs(int child, int parent, bool *v, int *pV){

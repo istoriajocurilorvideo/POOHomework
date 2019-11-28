@@ -200,3 +200,59 @@
 1574943398 source:c:\users\laur\desktop\homeworkoop_nr2_12-master-1\homeworkoop_nr2_12-master\tema12\src\graf_neorientat.cpp
 	"Graf_Neorientat.h"
 
+1574961771 source:c:\users\robofun.000\desktop\new folder\poohomework-master\poohomework-master\main.cpp
+	"Matrice.h"
+	"Vector.h"
+	"Graf.h"
+	"Graf_Neorientat.h"
+	"Graf_Orientat.h"
+
+1574959960 c:\users\robofun.000\desktop\new folder\poohomework-master\poohomework-master\include\matrice.h
+	"Universal.h"
+
+1574959016 c:\users\robofun.000\desktop\new folder\poohomework-master\poohomework-master\include\universal.h
+	<iostream>
+	<bits/stdc++.h>
+	<cstring>
+	<utility>
+	<exception>
+
+1574960969 c:\users\robofun.000\desktop\new folder\poohomework-master\poohomework-master\include\vector.h
+	"Universal.h"
+
+1574959016 c:\users\robofun.000\desktop\new folder\poohomework-master\poohomework-master\include\graf.h
+	"Universal.h"
+
+1574961646 c:\users\robofun.000\desktop\new folder\poohomework-master\poohomework-master\include\graf_neorientat.h
+	"Graf.h"
+	"Lista.h"
+
+1574961731 c:\users\robofun.000\desktop\new folder\poohomework-master\poohomework-master\include\lista.h
+	"Universal.h"
+	"Vector.h"
+
+1574960230 c:\users\robofun.000\desktop\new folder\poohomework-master\poohomework-master\include\graf_orientat.h
+	"Graf.h"
+	"Matrice.h"
+
+1574959016 source:c:\users\robofun.000\desktop\new folder\poohomework-master\poohomework-master\src\graf.cpp
+	"Graf.h"
+
+1574961790 source:c:\users\robofun.000\desktop\new folder\poohomework-master\poohomework-master\src\graf_neorientat.cpp
+	"Graf_Neorientat.h"
+
+1574960789 source:c:\users\robofun.000\desktop\new folder\poohomework-master\poohomework-master\src\graf_orientat.cpp
+	"Graf_Orientat.h"
+
+1574961930 source:c:\users\robofun.000\desktop\new folder\poohomework-master\poohomework-master\src\lista.cpp
+	"Lista.h"
+
+1574961917 source:c:\users\robofun.000\desktop\new folder\poohomework-master\poohomework-master\src\matrice.cpp
+	"Matrice.h"
+
+1574959016 source:c:\users\robofun.000\desktop\new folder\poohomework-master\poohomework-master\src\universal.cpp
+	"Universal.h"
+
+1574961917 source:c:\users\robofun.000\desktop\new folder\poohomework-master\poohomework-master\src\vector.cpp
+	"Vector.h"
+

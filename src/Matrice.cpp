@@ -1,8 +1,10 @@
 #include "Matrice.h"
 
-Matrice::Matrice() : size(0) {}
+template<typename type>
+Matrice<type>::Matrice() : size(0) {}
 
-Matrice::Matrice(unsigned int dim, int value) : size(dim)
+template<typename type>
+Matrice<type>::Matrice(unsigned int dim, type value) : size(dim)
 {
     allocateMatrix(m_data, dim);
     unsigned ind1, ind2;
@@ -12,18 +14,21 @@ Matrice::Matrice(unsigned int dim, int value) : size(dim)
     }
 }
 
-Matrice::Matrice(int **a, unsigned int dim) : size(dim)
+template<typename type>
+Matrice<type>::Matrice(type **a, unsigned int dim) : size(dim)
 {
     allocateMatrix(m_data, dim);
     matrixCopy(m_data, a, dim);
 }
 
-Matrice::~Matrice()
+template<typename type>
+Matrice<type>::~Matrice()
 {
     cleanUpMatrix(m_data, size);
 }
 
-Matrice::Matrice(const Matrice& other)
+template<typename type>
+Matrice<type>::Matrice(const Matrice& other)
 {
     unsigned int other_size = other.getSize();
     if(other_size != size) {
@@ -34,7 +39,8 @@ Matrice::Matrice(const Matrice& other)
     matrixCopy(m_data, other.m_data, other_size);
 }
 
-Matrice& Matrice::operator=(const Matrice& rhs)
+template<typename type>
+Matrice<type>& Matrice<type>::operator=(const Matrice<type>& rhs)
 {
     if (this == &rhs)
         return *this;
@@ -48,7 +54,8 @@ Matrice& Matrice::operator=(const Matrice& rhs)
     return *this;
 }
 
-int& Matrice::operator()(unsigned int row, unsigned int column)
+template<typename type>
+type& Matrice<type>::operator()(unsigned int row, unsigned int column)
 {
     if(row <  0 && column >= size) {
         throw std::out_of_range("Index out of bounds");
@@ -56,7 +63,8 @@ int& Matrice::operator()(unsigned int row, unsigned int column)
     return m_data[row][column];
 }
 
-int Matrice::operator()(unsigned int row, unsigned int column) const
+template<typename type>
+type Matrice<type>::operator()(unsigned int row, unsigned int column) const
 {
     if(row < 0 && column >= size) {
         throw std::out_of_range("Index out of bounds");
@@ -64,25 +72,28 @@ int Matrice::operator()(unsigned int row, unsigned int column) const
     return m_data[row][column];
 }
 
-void Matrice::allocateMatrix(int **&m_alloc, unsigned int m_size)
+template<typename type>
+void Matrice<type>::allocateMatrix(type **&m_alloc, unsigned int m_size)
 {
     try {
-        m_alloc = new int*[m_size];
+        m_alloc = new type*[m_size];
         for(unsigned int i = 0; i < m_size; ++i)
-            m_alloc[i] = new int[m_size];
+            m_alloc[i] = new type[m_size];
     } catch(std::bad_alloc& ba) {
         cout<<"Error : "<<ba.what()<<" for temp_data";
     }
 }
 
-void Matrice::cleanUpMatrix(int **&m_alloc, unsigned int m_size)
+template<typename type>
+void Matrice<type>::cleanUpMatrix(type **&m_alloc, unsigned int m_size)
 {
     for(unsigned int i = 0; i < m_size; ++i)
         delete [] m_alloc[i];
     delete [] m_alloc;
 }
 
-void Matrice::matrixCopy(int **&dest, int **src, unsigned int m_size)
+template<typename type>
+void Matrice<type>::matrixCopy(type **&dest, type **src, unsigned int m_size)
 {
     unsigned int index1, index2;
     for(index1 = 0; index1 < m_size; index1 ++) {
@@ -91,9 +102,10 @@ void Matrice::matrixCopy(int **&dest, int **src, unsigned int m_size)
     }
 }
 
-void Matrice::resize(unsigned int t_size, bool keepData)
+template<typename type>
+void Matrice<type>::resize(unsigned int t_size, bool keepData)
 {
-    int **temp_matrix;
+    type **temp_matrix;
     if(t_size != 0) {
         allocateMatrix(temp_matrix, t_size);
 
@@ -111,7 +123,8 @@ void Matrice::resize(unsigned int t_size, bool keepData)
     size = t_size;
 }
 
-void Matrice::print(ostream& out) const
+template<typename type>
+void Matrice<type>::print(ostream& out) const
 {
     unsigned int i, j;
     for(i = 0; i < size; i++) {
@@ -121,7 +134,8 @@ void Matrice::print(ostream& out) const
     }
 }
 
-void Matrice::read(istream& in)
+template<typename type>
+void Matrice<type>::read(istream& in)
 {
     unsigned int i, j;
     if(size > 0) {
@@ -132,3 +146,5 @@ void Matrice::read(istream& in)
     }
     else throw zero_length_error("matrix data is empty");
 }
+
+template class Matrice<int>;

@@ -3,26 +3,28 @@
 #include "Universal.h"
 #include "Vector.h"
 
+template<typename type>
 class Node
 {
 public:
     Node* next;
-    Vector data;
+    Vector<type> data;
 };
 
+template<typename type>
 class Lista : public ArrayStream
 {
 public:
     Lista();
     //Lista(unsigned int dim);
-    Lista(Vector *l, unsigned int vl_dim);
+    Lista(Vector<type> *l, unsigned int vl_dim);
     virtual ~Lista();
     Lista(const Lista& other);
     Lista& operator=(const Lista& other);
-    void addNode(Vector item);
-    Vector &operator[] (unsigned int index);
-    Vector operator[] (unsigned int index) const;
-    Node *getElementByIndex(unsigned int index) const;
+    void addNode(Vector<type> item);
+    Vector<type> &operator[] (unsigned int index);
+    Vector<type> operator[] (unsigned int index) const;
+    Node<type> *getElementByIndex(unsigned int index) const;
     void deleteElementByIndex(unsigned int index);
     void popBack();
     bool isListEmpty() const { return head == nullptr && tail == nullptr; }
@@ -34,7 +36,7 @@ private:
     static unsigned int counter_help;
     void print(ostream& out) const;
     void read(istream& in);
-    Node *head, *tail;
+    Node<type> *head, *tail;
 };
 
 #endif // LISTA_H

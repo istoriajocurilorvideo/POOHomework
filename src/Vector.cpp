@@ -1,13 +1,17 @@
 #include "Vector.h"
-Vector::Vector() : vSize(0) {}
 
-Vector::Vector(unsigned int dim, int value) : vSize(dim)
+template<typename type>
+Vector<type>::Vector() : vSize(0) {}
+
+template<typename type>
+Vector<type>::Vector(unsigned int dim, type value) : vSize(dim)
 {
     allocateVecData(vData, vSize);
     v_init(value);
 }
 
-Vector::Vector(int *v, unsigned int dim) : vSize(dim)
+template<typename type>
+Vector<type>::Vector(type *v, unsigned int dim) : vSize(dim)
 {
 
     allocateVecData(vData, vSize);
@@ -16,12 +20,14 @@ Vector::Vector(int *v, unsigned int dim) : vSize(dim)
 
 }
 
-Vector::~Vector()
+template<typename type>
+Vector<type>::~Vector()
 {
     delete[] vData;
 }
 
-Vector::Vector(const Vector& other)
+template<typename type>
+Vector<type>::Vector(const Vector& other)
 {
     if(vData == nullptr) {
         allocateVecData(vData, other.vSize);
@@ -34,7 +40,8 @@ Vector::Vector(const Vector& other)
     vSize = other.vSize;
 }
 
-Vector& Vector::operator=(const Vector& rhs)
+template<typename type>
+Vector<type>& Vector<type>::operator=(const Vector<type>& rhs)
 {
     if (this == &rhs)
         return *this;
@@ -51,28 +58,31 @@ Vector& Vector::operator=(const Vector& rhs)
     return *this;
 }
 
-int& Vector::operator[] (unsigned int index)
+template<typename type>
+type& Vector<type>::operator[] (unsigned int index)
 {
     if(index < 0 || index >= vSize)
         throw out_of_range("Index out of bounds");
     return vData[index];
 }
 
-int Vector::operator[] (unsigned int index) const
+template<typename type>
+type Vector<type>::operator[] (unsigned int index) const
 {
     if(index < 0 || index >= vSize)
         throw out_of_range("Index out of bounds");
     return vData[index];
 }
 
-void Vector::pushBack(const int& item)
+template<typename type>
+void Vector<type>::pushBack(const type& item)
 {
     if(vSize == 0) {
         allocateVecData(vData, 1);
         vSize = 1;
         vData[0] = item;
     } else {
-        int *temp_data;
+        type *temp_data;
         allocateVecData(temp_data, vSize + 1);
         copyVector(temp_data, vData, vSize);
         temp_data[vSize] = item;
@@ -83,9 +93,10 @@ void Vector::pushBack(const int& item)
     }
 }
 
-void Vector::resize(unsigned int size, bool keepData)
+template<typename type>
+void Vector<type>::resize(unsigned int size, bool keepData)
 {
-    int *temp_data;
+    type *temp_data;
     if(size != 0) {
         allocateVecData(temp_data, size);
         if(keepData) {
@@ -101,33 +112,38 @@ void Vector::resize(unsigned int size, bool keepData)
     if(size != 0) vData = temp_data;
 }
 
-void Vector::allocateVecData(int *&v_data, unsigned int size)
+template<typename type>
+void Vector<type>::allocateVecData(type *&v_data, unsigned int size)
 {
     try {
-        v_data = new int[size];
+        v_data = new type[size];
     } catch(bad_alloc& ba) {
         cout<<"Error : "<<ba.what()<<" : not able to allocate vector";
     }
 }
 
-void Vector::cleanUpVector(int *&v_data, unsigned int size)
+template<typename type>
+void Vector<type>::cleanUpVector(type *&v_data, unsigned int size)
 {
     delete[] v_data;
 }
 
-void Vector::copyVector(int *&v_dest, int *src, unsigned int size)
+template<typename type>
+void Vector<type>::copyVector(type *&v_dest, type *src, unsigned int size)
 {
     for(unsigned int index = 0; index < size; index++)
         v_dest[index] = src[index];
 }
 
-void Vector::v_init(int value)
+template<typename type>
+void Vector<type>::v_init(type value)
 {
     for(unsigned int index = 0; index < vSize; index++)
         vData[index] = value;
 }
 
-void Vector::print(ostream& out) const
+template<typename type>
+void Vector<type>::print(ostream& out) const
 {
     if(vSize != 0) {
         for(unsigned int index = 0; index < vSize; index++)
@@ -135,14 +151,15 @@ void Vector::print(ostream& out) const
     }
 }
 
-void Vector::read(istream& in)
+template<typename type>
+void Vector<type>::read(istream& in)
 {
-    int value;
+    type value;
     in>>value;
     pushBack(value);
 }
 /*
-bool Vector::operator== (const Vector &v)
+bool Vector<type>::operator== (const Vector &v)
 {
     for(int index=0; index < vSize; index++)
         if(vData[index] != v[index])
@@ -150,7 +167,7 @@ bool Vector::operator== (const Vector &v)
     return true;
 }
 
-bool Vector::operator!= (const Vector &v)
+bool Vector<type>::operator!= (const Vector &v)
 {
     for(int index=0; index < vSize; index++)
         if(vData[index] != v[index])
@@ -158,7 +175,8 @@ bool Vector::operator!= (const Vector &v)
     return false;
 }*/
 
-void Vector::deleteItemByItem(const int &item)
+template<typename type>
+void Vector<type>::deleteItemByItem(const type &item)
 {
     unsigned int index, index2;
     for(index=0; index < vSize; index++) {
@@ -170,7 +188,8 @@ void Vector::deleteItemByItem(const int &item)
     }
 }
 
-void Vector::deleteItemByIndex(unsigned int ind)
+template<typename type>
+void Vector<type>::deleteItemByIndex(unsigned int ind)
 {
     unsigned int index, index2;
     for(index=0; index < vSize; index++) {
@@ -182,9 +201,12 @@ void Vector::deleteItemByIndex(unsigned int ind)
     }
 }
 
-bool Vector::searchItem(const int &item){
+template<typename type>
+bool Vector<type>::searchItem(const type &item){
     for(unsigned int index = 0; index < vSize; index ++)
         if(vData[index] == item)
             return true;
     return false;
 }
+
+template class Vector<int>;

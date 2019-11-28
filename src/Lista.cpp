@@ -1,32 +1,38 @@
 #include "Lista.h"
-unsigned int Lista::counter_help = 0;
+template<typename type>
+unsigned int Lista<type>::counter_help = 0;
 
-Lista::Lista() : head(nullptr), tail(nullptr) {}
+template<typename type>
+Lista<type>::Lista() : head(nullptr), tail(nullptr) {}
 
-Lista::Lista(Vector *l, unsigned int vl_dim) : head(nullptr), tail(nullptr) {
+template<typename type>
+Lista<type>::Lista(Vector<type> *l, unsigned int vl_dim) : head(nullptr), tail(nullptr) {
     unsigned int index = 0;
     for(index = 0; index < vl_dim; index++)
         addNode(l[index]);
 }
 
-Lista::~Lista() {
+template<typename type>
+Lista<type>::~Lista() {
     emptyList();
 }
 
-Lista::Lista(const Lista& other) {
+template<typename type>
+Lista<type>::Lista(const Lista& other) {
     emptyList();
-    Node *t_head = other.head;
+    Node<type> *t_head = other.head;
     while(t_head != nullptr) {
         addNode(t_head->data);
         t_head = t_head -> next;
     }
 }
 
-Lista& Lista::operator=(const Lista& rhs) {
+template<typename type>
+Lista<type>& Lista<type>::operator=(const Lista<type>& rhs) {
     if (this == &rhs)
         return *this;
     emptyList();
-    Node *t_head = rhs.head;
+    Node<type> *t_head = rhs.head;
     while(t_head != nullptr) {
         addNode(t_head->data);
         t_head = t_head -> next;
@@ -34,9 +40,10 @@ Lista& Lista::operator=(const Lista& rhs) {
     return *this;
 }
 
-void Lista::emptyList() {
+template<typename type>
+void Lista<type>::emptyList() {
     if(isListEmpty() == false) {
-        Node *cur;
+        Node<type> *cur;
         while(head != nullptr) {
             cur = head;
             head = head->next;
@@ -46,8 +53,9 @@ void Lista::emptyList() {
         cout<<"List already empty"<<endl;
 }
 
-void Lista::addNode(Vector item) {
-    Node *tmp = new Node;
+template<typename type>
+void Lista<type>::addNode(Vector<type> item) {
+    Node<type> *tmp = new Node<type>;
     tmp->data = item;
     tmp->next = NULL;
 
@@ -60,24 +68,26 @@ void Lista::addNode(Vector item) {
     }
 }
 
-
-Vector& Lista::operator[] (unsigned int index) {
-    Node *cur = getElementByIndex(index);
+template<typename type>
+Vector<type>& Lista<type>::operator[] (unsigned int index) {
+    Node<type> *cur = getElementByIndex(index);
     if(cur == nullptr)
         throw out_of_range("Index out of bounds");
     return cur->data;
 }
 
-Vector Lista::operator[] (unsigned int index) const {
-    Node *cur = getElementByIndex(index);
+template<typename type>
+Vector<type> Lista<type>::operator[] (unsigned int index) const {
+    Node<type> *cur = getElementByIndex(index);
     if(cur == nullptr)
         throw out_of_range("Index out of bounds");
     return cur->data;
 }
 
-Node *Lista::getElementByIndex(unsigned int index) const{
+template<typename type>
+Node<type> *Lista<type>::getElementByIndex(unsigned int index) const{
     unsigned long int _index = 0;
-    Node *cur = head;
+    Node<type> *cur = head;
     while(cur->next != nullptr && _index != index) {
         cur = cur->next;
         _index++;
@@ -94,8 +104,9 @@ Node *Lista::getElementByIndex(unsigned int index) const{
     return cur;
 }
 
-void Lista::deleteElementByIndex(unsigned int index) {
-    Node *temp = head, *prev;
+template<typename type>
+void Lista<type>::deleteElementByIndex(unsigned int index) {
+    Node<type> *temp = head, *prev;
     for(int i=0; i < index; i++) {
         prev = temp;
         temp = temp->next;
@@ -104,15 +115,17 @@ void Lista::deleteElementByIndex(unsigned int index) {
     delete temp;
 }
 
-void Lista::print(ostream& out) const {
-    Node *temp = head;
+template<typename type>
+void Lista<type>::print(ostream& out) const {
+    Node<type> *temp = head;
     while(temp != NULL) {
         out<<temp->data<<" ";
         temp = temp->next;
     }
 }
 
-void Lista::read(istream& in) {
+template<typename type>
+void Lista<type>::read(istream& in) {
     if(!isListEmpty()){
         unsigned int i, j, v, size;
         while(head != nullptr){
@@ -127,8 +140,9 @@ void Lista::read(istream& in) {
     }else throw zero_length_error("list empty");
 }
 
-unsigned int Lista::getSize() const {
-    Node *temp = head;
+template<typename type>
+unsigned int Lista<type>::getSize() const {
+    Node<type> *temp = head;
     counter_help = 0;
     while(temp != nullptr) {
         counter_help++;
@@ -137,8 +151,9 @@ unsigned int Lista::getSize() const {
     return counter_help;
 }
 
-void Lista::popBack(){
-    Node *temp = head, *pred;
+template<typename type>
+void Lista<type>::popBack(){
+    Node<type> *temp = head, *pred;
     while(head->next != nullptr){
         pred = head;
         head = head->next;
@@ -146,3 +161,5 @@ void Lista::popBack(){
     pred->next = nullptr;
     delete head;
 }
+
+template class Lista<int>;

@@ -10,7 +10,7 @@ class Graf_Neorientat : public Graf
     public:
         Graf_Neorientat() : Graf(0) {};
         Graf_Neorientat(int noduriGN);
-        Graf_Neorientat(Lista l);
+        Graf_Neorientat(Lista<int> l);
         ~Graf_Neorientat();
         Graf_Neorientat(const Graf_Neorientat& other);
         Graf_Neorientat& operator=(const Graf_Neorientat& other);
@@ -24,7 +24,7 @@ class Graf_Neorientat : public Graf
         void showTreeParents(int root);
 
     private:
-        Lista gnl;
+        Lista<int> gnl;
         void resetVisited(bool *v, int dim);
         bool checkIfVisitedAll(bool *v, int dim);
         void tree_dfs(int child, int parent, bool *v, int *pV);

@@ -9,7 +9,7 @@ class Graf_Orientat : public Graf
     public:
         Graf_Orientat() : Graf(0){}
         Graf_Orientat(int nr_noduri);
-        Graf_Orientat(Matrice m);
+        Graf_Orientat(Matrice<int> m);
         ~Graf_Orientat();
         Graf_Orientat(const Graf_Orientat& other);
         Graf_Orientat& operator=(const Graf_Orientat& other);
@@ -25,7 +25,7 @@ class Graf_Orientat : public Graf
     protected:
 
     private:
-        Matrice gom;
+        Matrice<int> gom;
         void resetVisited(bool *v, int dim);
         bool checkIfVisitedAll(bool *v, int dim);
         void dfs(int node, bool *v, int dim);

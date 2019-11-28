@@ -1,6 +1,6 @@
 #include "Graf_Orientat.h"
 
-Graf_Orientat::Graf_Orientat(Matrice m) : Graf(m.getSize())
+Graf_Orientat::Graf_Orientat(Matrice<int> m) : Graf(m.getSize())
 {
     gom = m;
 }
@@ -8,7 +8,7 @@ Graf_Orientat::Graf_Orientat(Matrice m) : Graf(m.getSize())
 Graf_Orientat::Graf_Orientat(int nr_noduri) : Graf(nr_noduri)
 {
     gom.resize(nrNodes);
-    Matrice *t_m = new Matrice(nr_noduri);
+    Matrice<int> *t_m = new Matrice<int>(nr_noduri, 0);
     gom = *t_m;
 }
 
@@ -35,9 +35,13 @@ Graf_Orientat& Graf_Orientat::operator=(const Graf_Orientat& rhs)
 }
 
 void Graf_Orientat::addEdge(int nd1, int nd2){
+    if((nd1 < 0 || nd1 > nrNodes) || (nd2 < 0 || nd2 > nrNodes) )
+        throw out_of_range("Index out of range");
     gom(nd1, nd2) = 1;
 }
 void Graf_Orientat::deleteEdge(int nd1, int nd2){
+    if((nd1 < 0 || nd1 > nrNodes) || (nd2 < 0 || nd2 > nrNodes) )
+        throw out_of_range("Index out of range");
     gom(nd1, nd2) = 0;
 }
 void Graf_Orientat::addNode(){
@@ -132,5 +136,11 @@ void Graf_Orientat::print(ostream& out) const {
 }
 
 void Graf_Orientat::read(istream& in) {
-
+    if(gom.getSize() > 1) {
+        unsigned int nd1, nd2;
+        in>>nd1>>nd2;
+        if((nd1 < 0 || nd1 > nrNodes) || (nd2 < 0 || nd2 > nrNodes))
+            throw out_of_range("Index out of range");
+        addEdge(nd1, nd2);
+    }else throw zero_length_error("Oriented Graph empty");
 }

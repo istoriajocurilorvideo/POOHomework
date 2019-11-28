@@ -7,35 +7,39 @@
 int main()
 {
     cout<<"Matrix operations : ";
-    Matrice m(3);
+
+    Matrice<int> m(3, 0);
 
     m(1, 1) = 7;
     int i, j;
     int temp;
+    cout<<endl;
     for(i=0; i<m.getSize(); i++){
         for(j=0; j<m.getSize(); j++)
             cout<<m(i, j)<<" ";
         cout<<endl;
     }
+    //alternative
+    //cout<<m;
 
-
+    /*
     Matrice empty_m;
     try{
         cin>>empty_m;
     }catch(const zero_length_error& e){
         cout<<e.what()<<" "<<e.err_info();
         //exit(EXIT_FAILURE);
-    }
+    }*/
 
     cout<<endl;
     cout<<"Vector operations : ";
-    Vector v2(7);
+    Vector<int> v2(7, 0);
     cout<<"am fost creat";
     int v[] = {1, 2, 5, 6, 7};
     int mr = 5;
-    Vector v3(v, mr);
+    Vector<int> v3(v, mr);
     cout<<"SIeu";
-    Vector v1(v3);
+    Vector<int> v1(v3);
     cout<<"aici la fel";
     for(int index=0; index < v1.getSize(); index++)
         cout<<v1[index]<<" ";
